@@ -58,4 +58,11 @@
 
   EmberVerge.LoadingRoute = Ember.Route.extend({});
 
+  Ember.Handlebars.registerBoundHelper('getImageSrc', function(content) {
+    //var src = content.match(/src="([^\"]*)"/gim);
+    //src.toString().replace(/src=|"/gim, "");
+    var result = '<img class="media-object" ' + content.match(/src="([^\"]*)"/gim) + ' width="100"/>';
+    return new Handlebars.SafeString(result);
+  });
+
 })();
