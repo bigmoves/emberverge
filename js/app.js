@@ -1,5 +1,3 @@
-//var feed = "http://www.theverge.com/rss/index.xml";
-
 (function () {
 
   var getRSS = function(link) {
@@ -45,7 +43,7 @@
 
   })
 
-  // Routes below
+  // Routes 
   EmberVerge.Router.map(function() {
     this.resource("links", { path: "/" });
   });
@@ -59,8 +57,6 @@
   EmberVerge.LoadingRoute = Ember.Route.extend({});
 
   Ember.Handlebars.registerBoundHelper('getImageSrc', function(content) {
-    //var src = content.match(/src="([^\"]*)"/gim);
-    //src.toString().replace(/src=|"/gim, "");
     var result = '<img class="media-object" ' + content.match(/src="([^\"]*)"/gim) + ' width="100"/>';
     return new Handlebars.SafeString(result);
   });
